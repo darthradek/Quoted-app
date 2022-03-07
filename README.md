@@ -1,6 +1,7 @@
 # Quoted-app
 
 MEN REST API Assignment Quoted – quote generator that consists of:
+
 • REST API made with Express.js, Mongoose and MongoDB +
 swagger documentation, deployed on heroku.
 
