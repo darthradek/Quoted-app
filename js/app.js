@@ -10,7 +10,10 @@ function getRandomArbitrary(min, max) {
 };
 
 const getQuote = async () => {
-    const res = await fetch(apiURL + "/api/quotes");
+    const quotesRoute = "/api/quotes"
+
+    const res = await fetch(apiURL + quotesRoute);
+
     const quotes = await res.json();
 
     const content = document.getElementById("content");
@@ -18,18 +21,13 @@ const getQuote = async () => {
     let noOfQuotes = quotes.length;
 
     let quoteNo = getRandomArbitrary(0, noOfQuotes);
-    // let toolNo = getRandomArbitrary(0,noOfTools-1); // when not using the random function
 
     content.innerHTML = "<h1 style='font-size: 20px; color: #F5F2E7;font-style: italic;'>" + '"' + quotes[quoteNo].content + '"' + "</h1><div class='authorWrapper'>" + "<i class='fa-solid fa-user'></i> ~ " + quotes[quoteNo].author + "</div>"
-    // content.innerText = `"${quote.content}"`;
-    console.log(quotes[quoteNo].content)
 };
 
-//get first tool at initialization
 getQuote();
 
 quotesForm.addEventListener("submit", (e) => {
-    //preventing default
     e.preventDefault();
 
     getQuote();
