@@ -2,7 +2,7 @@
 background-color: #000000;
 height: auto;
 position: relative;
-height: 100vh;
+min-height: 100vh;
 }
 
 .action_banner {
